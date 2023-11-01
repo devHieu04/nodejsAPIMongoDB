@@ -42,9 +42,9 @@ app.post('/students', async (req, res) => {
   }
 });
 
-app.put('/students/:id', async (req, res) => {
+app.put('/students/:name', async (req, res) => {
   try {
-    const student = await Student.findByIdAndUpdate(req.params.id, req.body);
+    const student = await Student.findByIdAndUpdate(req.params.name, req.body);
     res.json(student);
   } catch (err) {
     res.status(400).json({ message: err.message });
